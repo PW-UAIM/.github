@@ -1,12 +1,21 @@
-## Hi there 👋
+# :blue_car: CarService
+Projekt systemu dla serwisu samochodowego wykonany w architekturze mikorusługowej z wykorzystaniem styków REST API.
 
-<!--
+## Wstęp
+Projekt składa się z 8 modułów:
+- 4 mikrousługi danych odpowiedzialne za operacje na danych
+- 2 mikrousługi aplikacyjne odpowiedzialne za operacje użytkownika
+- 2 aplikacje użytkownika
 
-**Here are some ideas to get you started:**
+## Role
+Przewidziane są dwie role użytkownika:
+### Mechanik
+Ma dostęp do wszystkich aut, wizyt, edycji niektórych właściwości wizyt.
+### Użytkownik
+Ma dostęp do swoich aut, wizyt, dodawania nowych aut, a także zapisywania na wizyty.
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## CI/CD
+Dla każdej z mikrousług jest utworzony proces CI/CD, zarządzający kompilacją, testami jednostkowymi, konteneryzacją oraz uruchominiem w środowisku produkcyjnym.
+
+## Produkcja
+System można uruchomić na platformie DockerCompose, bądź Kubernetes. Dzięki procesowi CI/CD możliwe jest "hot-swapping", z zerowym czasem "downtime", nowych wersji oprogramowania zamkniętych w kontenerze. 
